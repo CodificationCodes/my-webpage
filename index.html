@@ -12,6 +12,7 @@
             background-color: #f0f0f0;
             color: #333;
             transition: background-color 0.3s, color 0.3s;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         .dark-mode {
             background-color: #1a1a1a;
@@ -48,6 +49,20 @@
             font-size: 1.2em;
             line-height: 1.6;
         }
+        .plane {
+            position: absolute;
+            bottom: 20px;
+            width: 50px;
+            animation: fly 10s linear infinite;
+        }
+        @keyframes fly {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
     </style>
 </head>
 <body>
@@ -64,6 +79,8 @@
     <h2>Things I'm Doing</h2>
     <p>Working on an internet proxy website, and leaning towards the crypto world.</p>
 </main>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Plane_icon.svg/1024px-Plane_icon.svg.png" alt="Plane" class="plane">
 
 <script>
     const toggleBtn = document.getElementById('toggleBtn');
